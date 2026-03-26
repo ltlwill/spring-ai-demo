@@ -1,0 +1,26 @@
+server:
+  port: 9090
+  context-path: /
+  compression:
+    enabled: true
+spring:
+  application:
+    name: demo
+  profiles:
+    active: dev
+  ai:
+    zhipuai:
+      model: glm-4.7
+#      base-url: https://open.bigmodel.cn/api/paas/v4/chat/completions  # 可不填，填https://open.bigmodel.cn即可
+      api-key: 45efdeb214fc438fa20897b0c2ab79f6.Qq24kXrVlj2pOmhc
+      chat:
+        options:
+          temperature: 0.7  # 温度参数（0-1，越高越随机）
+          top-p: 0.95
+#    openai:
+#      api-key: llm-key-here
+#      base-url: https://api.openai.com/v1
+#      model: gpt-4.7
+#      chat:
+#        options:
+#          temperature: 0.7
