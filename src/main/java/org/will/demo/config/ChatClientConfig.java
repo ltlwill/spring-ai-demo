@@ -32,4 +32,34 @@ public class ChatClientConfig {
 //    public ChatClient anthropicChatClient(AnthropicChatModel chatModel) {
 //        return ChatClient.create(chatModel);
 //    }
+
+    /**
+     * 默认元数据
+     * @param builder
+     * @return
+     */
+//    public ChatClient chatClient(ChatClient.Builder builder){
+//        return builder
+//                .defaultSystem(s -> s.text("You are a helpful assistant.")
+//                        .metadata("role", "assistant")
+//                        .metadata("version", "1.0"))
+//                .defaultUser(u -> u.text("Who are you?")
+//                        .metadata("role", "user"))
+//                .build();
+//    }
+
+    /**
+     * 默认元数据，占位符的默认系统文本
+     * @param builder
+     * @return
+     */
+//    public ChatClient chatClient(ChatClient.Builder builder){
+//        return builder
+//                .defaultSystem(s -> s.text("You are a helpful assistant. your name is {userName}")
+//                        .metadata("role", "assistant")
+//                        .metadata("version", "1.0"))
+//                .defaultUser(u -> u.text("Who are you?")
+//                        .metadata("role", "user"))
+//                .build();
+//    }
 }
