@@ -23,11 +23,11 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		<!-- open AI -->
-		<dependency>
-			<groupId>org.springframework.ai</groupId>
-			<artifactId>spring-ai-starter-model-openai</artifactId>
-			<version>${spring-ai.version}</version>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.ai</groupId>-->
+<!--			<artifactId>spring-ai-starter-model-openai</artifactId>-->
+<!--			<version>${spring-ai.version}</version>-->
+<!--		</dependency>-->
 		<!-- ZhiPu AI -->
 		<dependency>
 			<groupId>org.springframework.ai</groupId>
@@ -35,9 +35,25 @@
 			<version>${spring-ai.version}</version>
 		</dependency>
 		<!-- MiniMax AI-->
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.ai</groupId>-->
+<!--			<artifactId>spring-ai-starter-model-minimax</artifactId>-->
+<!--		</dependency>-->
+
+
+
+		<!--		 open CV-->
+<!--		<dependency>-->
+<!--			<groupId>org.openpnp</groupId>-->
+<!--			<artifactId>opencv</artifactId>-->
+<!--			<version>4.9.0-0</version>-->
+<!--		</dependency>-->
+
+		<!-- 唯一能用、自带本地库的 OpenCV 依赖 -->
 		<dependency>
-			<groupId>org.springframework.ai</groupId>
-			<artifactId>spring-ai-starter-model-minimax</artifactId>
+			<groupId>org.openpnp</groupId>
+			<artifactId>opencv</artifactId>
+			<version>4.9.0-0</version>
 		</dependency>
 
 		<dependency>

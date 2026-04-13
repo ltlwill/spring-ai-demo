@@ -28,8 +28,12 @@ public class ZhipuController {
 
     private final ChatClient chatClient;
 
-    public ZhipuController(ChatClient.Builder builder) {
-        this.chatClient = builder.build();
+//    public ZhipuController(ChatClient.Builder builder) {
+//        this.chatClient = builder.build();
+//    }
+
+    public ZhipuController(ZhiPuAiChatModel zhiPuAiChatModel) {
+        this.chatClient = ChatClient.create(zhiPuAiChatModel);
     }
 
     @GetMapping(value = "/chat")

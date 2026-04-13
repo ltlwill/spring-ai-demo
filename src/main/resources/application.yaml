@@ -8,6 +8,9 @@ spring:
     name: demo
   profiles:
     active: dev
+  threads:
+    virtual:
+      enabled: true # 开启虚拟线程，需 jdk21+
   ai:
     zhipuai:
       model: glm-4.7
@@ -17,10 +20,12 @@ spring:
         options:
           temperature: 0.7  # 温度参数（0-1，越高越随机）
           top-p: 0.95
-#    openai:
-#      api-key: llm-key-here
-#      base-url: https://api.openai.com/v1
-#      model: gpt-4.7
+    openai:
+      enabled: false
+#   openai:
+#     api-key: llm-key-here
+#     base-url: https://api.openai.com/v1
+#     model: gpt-4.7
 #      chat:
 #        options:
 #          temperature: 0.7
