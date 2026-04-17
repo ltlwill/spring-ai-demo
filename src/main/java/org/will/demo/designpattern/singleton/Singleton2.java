@@ -4,7 +4,7 @@
  * @description
  */
 
-package org.will.demo.singleton;
+package org.will.demo.designpattern.singleton;
 
 /**
  * 单列模式：懒汉式（线程不安全）

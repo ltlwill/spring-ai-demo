@@ -4,7 +4,7 @@
  * @description
  */
 
-package org.will.demo.singleton;
+package org.will.demo.designpattern.singleton;
 
 /**
  * 双重检查锁 DCL（Double-Checked Locking）

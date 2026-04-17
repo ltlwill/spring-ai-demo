@@ -4,7 +4,7 @@
  * @description
  */
 
-package org.will.demo.singleton;
+package org.will.demo.designpattern.singleton;
 
 /**
  * 单列模式：饿汉式（静态代码块）

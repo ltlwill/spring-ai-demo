@@ -4,7 +4,7 @@
  * @description
  */
 
-package org.will.demo.singleton;
+package org.will.demo.designpattern.singleton;
 
 /**
  * 单列模式：静态内部类（最优之一，推荐）
