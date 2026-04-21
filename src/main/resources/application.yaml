@@ -29,3 +29,14 @@ spring:
 #      chat:
 #        options:
 #          temperature: 0.7
+
+  # MQ
+  rabbitmq:
+    host: 192.168.4.31
+    port: 5672
+    username: test
+    password: test.123
+    template:
+      retry:
+        enabled: true
+        initial-interval: 2s
