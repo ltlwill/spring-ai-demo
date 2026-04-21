@@ -24,10 +24,17 @@ public class RabbitMQConfig {
     }
 
     // 2. 创建 Topic 交换机（最常用）
+//    @Bean
+//    public TopicExchange testExchange() {
+//        return new TopicExchange(RabbitMqConstants.TEST_EXCHANGE);
+//    }
+
     @Bean
     public TopicExchange testExchange() {
-        return new TopicExchange(RabbitMqConstants.TEST_EXCHANGE);
+        return new TopicExchange(RabbitMqConstants.TEST_EXCHANGE, true, false); // 交换机持久化。默认：持久化
     }
+
+
 
     // 3. 绑定队列到交换机
     @Bean

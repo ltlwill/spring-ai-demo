@@ -15,6 +15,6 @@ public class RabbitMQConsumer {
      */
     @RabbitListener(queues = RabbitMqConstants.TEST_QUEUE)
     public void receiveMessage(String message) {
-        System.out.println("收到消息：" + message);
+        System.out.println("收到消息：" + message + "；时间戳：" + System.currentTimeMillis());
     }
 }
