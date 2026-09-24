@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>sse test test</title>
+    <style>
+        .message-container{
+            width: 400px;
+            height: 200px;
+            margin: 0 auto;
+            border: solid 1px gray;
+            padding: 0 10px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="message-container"></div>
+</body>
+<script>
+    const clientId = 'xaxasasasasaqq';
+    const es = new EventSource(`http://localhost:9090/sse/subscribe/${clientId}`);
+
+    const container = document.querySelector('.message-container')
+    // 默认事件（无 event 名）
+    es.addEventListener('message', e => {
+        const data = JSON.parse(e.data)
+        console.log('收到:', data);
+        const msg = data?.message
+        if(msg){
+            const msgItem = document.createElement('div')
+            msgItem.classList = 'message-item'
+            msgItem.textContent = msg
+            container.append(msgItem)
+            /**
+             * scrollHeight：内容总高（总高）
+             * scrollTop:已滚过(已滚)
+             * clientHeight: 可见高(可见)
+             */
+            if (container.scrollHeight - container.scrollTop > container.clientHeight) {
+                container.scrollTop = container.scrollHeight;
+            }
+        }
+    });
+
+    // 自定义事件
+    es.addEventListener('check-finished', e => {
+        console.log('检查完成:', JSON.parse(e.data));
+    });
+    es.addEventListener('check-error', e => {
+        console.log('检查失败:', JSON.parse(e.data));
+    });
+
+    es.onerror = () => {
+        // EventSource 自带自动重连（约 3 秒），这里只需处理 UI 提示
+    };
+</script>
+</html>
